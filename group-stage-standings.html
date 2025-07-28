@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="Icon_ALL.png" type="image/png" />
   <title>VBL 2025 Summer丨積分概況</title>
+  <link rel="icon" href="Icon_ALL.png" type="image/png" />
   <style>
     * {
       margin: 0;
@@ -13,7 +13,7 @@
     }
 
     body {
-      background-image: url('VBL2025Summer_BG.png');
+      background-image: url('Site_BG.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -25,12 +25,40 @@
       align-items: center;
     }
 
+    /* ✅ 進場動畫 */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     header {
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 40px 20px 20px;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    header img {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: 15px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    header h1 {
       font-size: 2.5rem;
       font-weight: 800;
       text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.6s;
     }
 
     main {
@@ -38,24 +66,29 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 40px;
+      gap: 60px;
       padding-bottom: 50px;
     }
 
-    .iframe-wrapper {
+    /* ✅ 嵌入賽程表置中 + RWD 處理 */
+    .iframe-container {
       width: 100%;
-      overflow-x: auto;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 0 20px;
     }
 
     .iframe-inner {
-      width: 95vw; /* 可改為固定寬度如 1000px */
+      width: 95vw;
       max-width: 1200px;
       height: 600px;
       border: none;
       border-radius: 12px;
       background-color: rgba(0, 0, 0, 0.3);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease;
     }
 
     .iframe-inner:hover {
@@ -74,21 +107,26 @@
   </style>
 </head>
 <body>
-  <header>VBL 2025 Summer 小組資格賽 積分概況</header>
+  <header>
+    <img src="VBL2025Summer_Logo.png" alt="VBL 2025 Logo" />
+    <h1>VBL 2025 Summer 小組資格賽 積分概況</h1>
+  </header>
+
   <main>
-    <div class="iframe-wrapper">
+    <div class="iframe-container">
       <iframe class="iframe-inner" src="https://brackethq.com/b/wlatc/embed/?name=1&stand=1"></iframe>
     </div>
-    <div class="iframe-wrapper">
+    <div class="iframe-container">
       <iframe class="iframe-inner" src="https://brackethq.com/b/klatc/embed/?name=1&stand=1"></iframe>
     </div>
-    <div class="iframe-wrapper">
+    <div class="iframe-container">
       <iframe class="iframe-inner" src="https://brackethq.com/b/4latc/embed/?name=1&stand=1"></iframe>
     </div>
-    <div class="iframe-wrapper">
+    <div class="iframe-container">
       <iframe class="iframe-inner" src="https://brackethq.com/b/9latc/embed/?name=1&stand=1"></iframe>
     </div>
   </main>
+
   <footer>
     Copyright © 2024-2025 VALORANT Burst Lounge All Rights Reserved
   </footer>
