@@ -1,87 +1,147 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VBL 2025 Summer丨Spectra Client 安裝指南</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VBL 2025 Summer丨Spectra Client 注意事項</title>
   <link rel="icon" href="Icon_ALL.png" type="image/png" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: url('VBL2025Summer_BG.png') no-repeat center center fixed;
+      background-image: url('VBL2025Summer_BG.png');
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       font-family: "Segoe UI", sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .header {
-      background-color: rgba(255, 94, 58, 0.85);
-      color: white;
-      padding: 2rem;
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
       text-align: center;
-      border-radius: 0 0 20px 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 40px 20px 20px;
+      animation: fadeInUp 1s ease-out forwards;
     }
-    .card {
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: rgba(255, 255, 255, 0.9);
+
+    header img {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: 15px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.3s;
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.6s;
+    }
+
+    main {
+      width: 100%;
+      max-width: 900px;
+      padding: 30px 20px 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.8s;
+    }
+
+    .note-box {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .note-box strong {
+      color: #ff8080;
+    }
+
+    .manual-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: #ff3131;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .manual-button:hover {
+      background-color: #e02222;
+    }
+
     footer {
-      margin-top: 3rem;
-      padding: 1rem;
-      background-color: #343a40;
-      color: white;
       text-align: center;
-      border-radius: 20px 20px 0 0;
-    }
-    .logo {
-      max-width: 200px;
-      margin-bottom: 1rem;
+      padding: 15px 20px;
+      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ccc;
+      width: 100%;
+      backdrop-filter: blur(6px);
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <img src="VBL2025Summer_Logo.png" alt="VBL 2025 Summer Logo" class="logo">
-    <h1>Spectra Client 安裝與設置教學</h1>
-    <p class="lead">Spectra Client Installation and Setup Tutorial</p>
+  <header>
+    <img src="VBL2025Summer_Logo.png" alt="VBL 2025 Logo" />
+    <h1>Spectra Client 使用注意事項</h1>
   </header>
 
-  <main class="container my-5">
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">1. 下載 Spectra Client</h5>
-          <p>前往 <a href="https://valospectra.com/download" target="_blank">官方下載頁面</a>，取得安裝檔並完成安裝。</p>
-        </div>
-      </div>
+  <main>
+    <div class="note-box">
+      <p><strong>Spectra Client</strong> 是一款協助主播與賽評即時顯示 VALORANT 戰局資訊的 Overlay 工具。</p>
 
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">2. 啟動 Spectra Client</h5>
-          <p>安裝後先啟動 Spectra Client，並確認連接伺服器與 Riot ID 正確。</p>
-        </div>
-      </div>
+      <p>請務必注意以下幾點以確保順利使用：</p>
 
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">3. 開啟《特戰英豪》</h5>
-          <p>請先啟動 Spectra Client，再開啟《特戰英豪》，以避免發生錯誤。</p>
-        </div>
-      </div>
+      <ul>
+        <li>僅支援 Windows 平台，請勿在 macOS / Linux 使用。</li>
+        <li>啟動 Spectra Client 前請先開啟 VALORANT 並完成登入。</li>
+        <li>如遇無法連線、未顯示資料等狀況，請重新啟動程式並確認網路連線穩定。</li>
+        <li>請勿重命名主程式檔案，否則可能導致無法更新或錯誤。</li>
+        <li>程式不會儲存任何帳號密碼資訊，請安心使用。</li>
+      </ul>
 
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">4. 確認開啟順序</h5>
-          <p>請確認 Spectra Client 啟動後，才開啟遊戲，並再次檢查 Riot ID 是否正確。</p>
-        </div>
-      </div>
+      <p>欲了解完整安裝與使用說明，請點擊下方按鈕查看官方手冊：</p>
+
+      <a href="https://docs.google.com/document/d/1pAcet_4eFwhl9NSIya2516gg8xkv8-62oF57cgPqCcI/edit?usp=drivesdk" target="_blank" class="manual-button">點我查閱使用說明手冊</a>
     </div>
   </main>
 
   <footer>
-    <p>Copyright © 2024-2025 VALORANT Burst Lounge All Rights Reserved</p>
+    Copyright © 2024-2025 VALORANT Burst Lounge All Rights Reserved
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
